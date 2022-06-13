@@ -1,0 +1,92 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Tailwind example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+        },
+      }
+    </script>
+</head>
+
+
+<body>
+
+    <header class="">
+    <img src="logo.png" alt="Banco logo" width="200">
+    <h1 class="text-blue-500">Welcome to Banco de Occidente</h1>
+</header>
+
+<nav class="">
+    <a href="#" class="">Vehicle</a>
+    <a href="#" class="">Aseguardo</a>
+    <a href="#" class="">Cotizacion</a>
+    <a href="#" class="">Confirmacion</a>
+    <a href="#" class="">Inspecccion</a>
+</nav>
+
+<form role="main" action="" class="">
+    <section id="'title" class="">
+        <h1>Datos del asegurado</h1>
+    </section>
+
+    <section id="row1" class="row">
+        <label for="firstname" class="">First Name</label>
+        <input id="firstname" type="text" name="firstname" class="">
+
+        <label for="lastname" class="">Last Name</label>
+        <input id="lastname" type="text" name="lastname" class="">
+
+    </section>
+
+    <section id="row2" class="row">
+        <label for="make" class="">Car Make</label>
+        <select id="makeCar" name="make" class="">
+            <option>Audi</option>
+            <option>BMW</option>
+            <option>Porsche</option>
+        </select>                
+
+        <label for="startDate" class="">Policy Start Date</label>
+        <input id="startDate" type="date" name="startDate" class="">
+    </section>
+
+    <section id="declarations" class="row">
+        <form>
+            <label class="">Do you agree?</label>
+            <input id="confirmation_yes" type="radio" name="confirmation" value="Y" class="">
+            <label for="yes" class="">Yes</label>
+            <input id="confirmation_no" type="radio" name="confirmation" value="N" class="">
+            <label for="no" class="">No</label>
+        </form>
+    </section>
+
+    <section id="marketing" class="row">
+        <form>
+            <label class="">How did you hear about us?</label>
+            <input id="marketing1" type="checkbox" name="marketing1" value="1" class="">
+            <label for="marketing1" class="">Google</label>
+            <input id="marketing2" type="checkbox" name="marketing2" value="2" class="">
+            <label for="marketing2" class="">Facebook</label>
+        </form>
+    </section>
+
+    <section id="buttons" class="row">
+        <form>
+            <button type="button" class="">Back</button>
+            <button type="button" class="">Next</button>   
+        </form>
+    </section>
+
+</form>
+
+
+<footer id="footer" class=""><p>Footer: Lorem ipsum cars are awesome</p></footer>
+
+</body>
+</html>
