@@ -1,0 +1,146 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Tailwind example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+
+<!-- 
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-blue {
+                @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+            },
+            .wrapper {
+                @apply font-sans bg-purple-200 p-12;
+            },
+            .menu {
+                @apply bg-white p-2 rounded-full mb-7;
+            },
+            .a {
+                @apply bg-blue-50 text-gray-800 py-2 px-6 rounded-full;
+            },
+            .a.active {
+                @apply bg-blue-500 text-white;
+            },
+            .h3 {
+               @apply font-bold mb-3 font-mono;
+            }
+        }
+    </style>
+-->
+
+    <script>
+      tailwind.config = {
+        theme: {
+            fontFamily: {
+                sans: ['Noto Sans', 'sans-serif'],
+            },
+            extend: {
+                colors: {
+                    'blue': '#002cff',
+                    'purple': '#7e5bef',
+                    'pink': '#ff49db',
+                    'orange': '#ff7849',
+                    'green': '#13ce66',
+                    'yellow': '#ffc82c',
+                },
+            },
+        },
+      }
+    </script>
+</head>
+
+
+<body>
+    <header class="">
+        <img src="logo.png" alt="Banco logo" width="200">
+        <h1 class="text-blue">Welcome to Banco de Occidente</h1>
+    </header>
+
+
+<div class="">
+<nav class="menu flex justify-evenly">
+    <a href="#" class="">Vehicle</a>
+    <a href="#" class="active">Aseguardo</a>
+    <a href="#" class="">Cotizacion</a>
+    <a href="#" class="">Confirmacion</a>
+    <a href="#" class="">Inspecccion</a>
+</nav>
+</div>
+
+<form role="main" action="" class="mt-8">
+    <section id="'title" class="mx-auto">
+        <h1>Datos del asegurado</h1>
+    </section>
+
+    <section id="row1" class="row">
+        <label for="firstname" class="">First Name</label>
+        <input id="firstname" type="text" name="firstname" class="">
+
+        <label for="lastname" class="">Last Name</label>
+        <input id="lastname" type="text" name="lastname" class="">
+
+    </section>
+
+    <section id="row2" class="row">
+        <label for="make" class="">Car Make</label>
+        <select id="makeCar" name="make" class="">
+            <option>Audi</option>
+            <option>BMW</option>
+            <option>Porsche</option>
+        </select>                
+
+        <label for="startDate" class="">Policy Start Date</label>
+        <input id="startDate" type="date" name="startDate" class="">
+    </section>
+
+    <section id="declarations" class="row">
+        <form>
+            <label class="">Do you agree?</label>
+            <input id="confirmation_yes" type="radio" name="confirmation" value="Y" class="">
+            <label for="yes" class="">Yes</label>
+            <input id="confirmation_no" type="radio" name="confirmation" value="N" class="">
+            <label for="no" class="">No</label>
+        </form>
+    </section>
+
+    <section id="marketing" class="row">
+        <form>
+            <label class="">How did you hear about us?</label>
+            <input id="marketing1" type="checkbox" name="marketing1" value="1" class="">
+            <label for="marketing1" class="">Google</label>
+            <input id="marketing2" type="checkbox" name="marketing2" value="2" class="">
+            <label for="marketing2" class="">Facebook</label>
+        </form>
+    </section>
+
+        <div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back</button>
+            <button type="button" class="">Next</button>   
+        </div>
+
+</form>
+
+<footer id="footer" class=""><p>Footer: Lorem ipsum cars are awesome</p></footer>
+
+
+<article class="mt-8 prose prose-slate mx-auto lg:prose-lg">
+    <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
+    <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
+    <p>We get lots of complaints about it actually, with people regularly asking us things like:</p>
+    <blockquote>
+      <p>Why is Tailwind removing the default styles on my <code>h1</code> elements? How do I disable this? What do you mean I lose all the other base styles too?</p>
+    </blockquote>
+    <p>We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a <code>p</code> element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look <em>awesome</em>, not awful.</p>
+</article>
+
+</body>
+</html>

@@ -5,33 +5,37 @@
     <title>Tailwind example</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-        },
-      }
-    </script>
+
+
+    
 </head>
 
 
 <body>
-
     <header class="">
-    <img src="logo.png" alt="Banco logo" width="200">
-    <h1 class="text-blue-500">Welcome to Banco de Occidente</h1>
-</header>
+        <img src="logo.png" alt="Banco logo" width="200">
+        <h1 class="text-blue">Welcome to Banco de Occidente</h1>
+    </header>
 
-<nav class="">
+
+<div class="">
+<nav class="flex p-12 bg-purple-200 menu justify-evenly">
     <a href="#" class="">Vehicle</a>
-    <a href="#" class="">Aseguardo</a>
+    <a href="#" class="active">Aseguardo</a>
     <a href="#" class="">Cotizacion</a>
     <a href="#" class="">Confirmacion</a>
     <a href="#" class="">Inspecccion</a>
 </nav>
+</div>
 
-<form role="main" action="" class="">
-    <section id="'title" class="">
+<form role="main" action="" class="mt-8">
+    <section id="'title" class="mx-auto">
         <h1>Datos del asegurado</h1>
     </section>
 
@@ -76,16 +80,19 @@
         </form>
     </section>
 
-    <section id="buttons" class="row">
+    <section id="buttons" class="flex justify-center row">
         <form>
-            <button type="button" class="">Back</button>
-            <button type="button" class="">Next</button>   
+            <button type="button" class="px-4 py-2 font-light text-white bg-blue-500 rounded-xl hover:font-bold hover:bg-blue-700">Back</button>
+            <button type="button" class="">Next</button>       
         </form>
     </section>
 
 </form>
 
-<article class="mt-8 prose prose-slate mx-auto lg:prose-lg">
+<footer id="footer" class=""><p>Footer: Lorem ipsum cars are awesome</p></footer>
+
+
+<article class="mx-auto mt-8 prose prose-slate lg:prose-lg">
     <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
     <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
     <p>We get lots of complaints about it actually, with people regularly asking us things like:</p>
@@ -94,8 +101,6 @@
     </blockquote>
     <p>We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a <code>p</code> element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look <em>awesome</em>, not awful.</p>
 </article>
-
-<footer id="footer" class=""><p>Footer: Lorem ipsum cars are awesome</p></footer>
 
 </body>
 </html>
