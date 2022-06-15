@@ -13,7 +13,66 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
 
-    
+<!--
+    <script>
+        tailwind.config = {
+          theme: {
+              fontFamily: {
+                  sans: ['Noto Sans', 'sans-serif']
+              }
+          }
+        }
+    </script>
+-->
+
+<script>
+    tailwind.config = {
+      theme: {
+        fontFamily: { 'sans': ['Noto Sans', 'sans-serif'],},
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        },
+        
+      }
+    }
+  </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-blue {
+                @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+            }
+            .wrapper {
+                @apply font-sans bg-purple-200 p-12;
+            }
+            .menu {
+                @apply bg-white p-2 rounded-full mb-7;
+            }
+            a {
+                @apply bg-blue-50 text-gray-800 py-2 px-6 rounded-full hover:text-gray-500;
+            }
+            a.active {
+                @apply bg-blue-500 text-white;
+            }
+            h3 {
+                @apply font-bold mb-3;
+              }
+
+        }
+    </style>
+
+
+
 </head>
 
 
@@ -24,15 +83,16 @@
     </header>
 
 
-<div class="">
-<nav class="flex p-12 bg-purple-200 menu justify-evenly">
-    <a href="#" class="">Vehicle</a>
-    <a href="#" class="active">Aseguardo</a>
-    <a href="#" class="">Cotizacion</a>
-    <a href="#" class="">Confirmacion</a>
-    <a href="#" class="">Inspecccion</a>
-</nav>
-</div>
+
+<section class="wrapper">
+    <nav class="flex menu justify-evenly">
+        <a href="#" class="">Vehicle</a>
+        <a href="#" class="active">Aseguardo</a>
+        <a href="#" class="">Cotizacion</a>
+        <a href="#" class="">Confirmacion</a>
+        <a href="#" class="">Inspecccion</a>
+    </nav>
+</section>
 
 <form role="main" action="" class="mt-8">
     <section id="'title" class="mx-auto">
