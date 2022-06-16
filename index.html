@@ -18,10 +18,9 @@
         fontFamily: { 'sans': ['Noto Sans', 'sans-serif'],},
         extend: {
           colors: {
-            clifford: '#da373d',
+            clifford: '#00ff00',
           }
         },
-        
       }
     }
   </script>
@@ -46,7 +45,7 @@
                 @apply bg-white p-2 rounded-full mb-7;
             }
             a {
-                @apply bg-blue-50 text-gray-800 py-2 px-6 rounded-full hover:text-gray-500;
+                @apply bg-blue-50 text-gray-800 py-2 px-6 rounded-full hover:text-clifford;
             }
             a.active {
                 @apply bg-blue-500 text-white;
@@ -89,7 +88,26 @@
         <input id="firstname" type="text" name="firstname" class="">
 
         <label for="lastname" class="">Last Name</label>
-        <input id="lastname" type="text" name="lastname" class="">
+
+        <input id="lastname" type="text" name="lastname" class="mt-0
+        block
+        w-full
+        px-0.5
+        border-0 border-b-2 border-gray-200
+        focus:ring-0 focus:border-black">
+
+        <label class="block">
+            <span class="text-gray-700">Full name</span>
+            <input type="text" class="
+                mt-0
+                block
+                w-full
+                px-0.5
+                border-0 border-b-2 border-gray-200
+                focus:ring-0 focus:border-black
+              " placeholder="">
+          </label>
+
 
     </section>
 
@@ -134,18 +152,15 @@
 
 </form>
 
-<footer id="footer" class=""><p>Footer: Lorem ipsum cars are awesome</p></footer>
-
-
-<article class="mx-auto mt-8 prose prose-slate lg:prose-lg">
-    <p class="lead">Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.</p>
-    <p>By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you <em>really are</em> just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.</p>
-    <p>We get lots of complaints about it actually, with people regularly asking us things like:</p>
+<footer id="footer" class="mx-4 mt-8 prose-sm prose prose-slate prose-p:text-blue-600 hover:prose-p:text-blue-500 prose-code:text-red-500">
+    <p class="lead">Footer: Lorem ipsum is awesome</p>
+    <p class="">Here is some more lorem ipsum text</p>
     <blockquote>
-      <p>Why is Tailwind removing the default styles on my <code>h1</code> elements? How do I disable this? What do you mean I lose all the other base styles too?</p>
-    </blockquote>
-    <p>We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a <code>p</code> element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look <em>awesome</em>, not awful.</p>
-</article>
+        <p>Why is Tailwind removing the default styles on my <code>h1</code> elements? How do I disable this? What do you mean I lose all the other base styles too?</p>
+      </blockquote>
+  
+</footer>
+
 
 </body>
 </html>
