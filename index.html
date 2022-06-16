@@ -1,166 +1,215 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Tailwind example</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
-    
-<script>
-    tailwind.config = {
-      theme: {
-        fontFamily: { 'sans': ['Noto Sans', 'sans-serif'],},
-        extend: {
-          colors: {
-            clifford: '#00ff00',
-          }
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: { sans: ["Noto Sans", "sans-serif"] },
+          extend: {
+            colors: {
+              clifford: "#00ff00",
+            },
+          },
         },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
       }
+    </style>
+
+    <style type="text/tailwindcss">
+      @layer components {
+        .btn-blue {
+          @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+        }
+        .wrapper {
+          @apply font-sans bg-purple-200 p-12;
+        }
+        .menu {
+          @apply bg-white p-2 rounded-full mb-7;
+        }
+        a {
+          @apply bg-blue-50 text-gray-800 py-2 px-6 rounded-full hover:text-clifford;
+        }
+        a.active {
+          @apply bg-blue-500 text-white;
+        }
+        h3 {
+          @apply font-bold mb-3;
+        }
+        .quote {
+           @apply m-3 p-6 bg-blue-100 rounded-lg;
+        }
+        .quote p {
+            @apply italic text-lg text-gray-700 leading-snug mb-1;
+        }
+        .quote span {
+            @apply text-sm text-gray-500;
+        }
+        .row {
+            @apply grid grid-cols-2 mx-36 my-24 gap-16;
+        }
+        .btn_primary {
+            @apply w-40 px-4 py-2 font-light text-white bg-blue-500 rounded-xl hover:font-bold hover:bg-blue-700
+        }
+        .btn_secondary {
+            @apply w-40 px-4 py-2 font-light text-blue-500 border-2 border-blue-500 rounded-xl hover:font-bold hover:bg-blue-700 hover:text-white hover:border-blue-700
+        }
     }
-  </script>
-
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-        }
     </style>
+  </head>
 
-    <style type="text/tailwindcss">
-        @layer components {
-            .btn-blue {
-                @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
-            }
-            .wrapper {
-                @apply font-sans bg-purple-200 p-12;
-            }
-            .menu {
-                @apply bg-white p-2 rounded-full mb-7;
-            }
-            a {
-                @apply bg-blue-50 text-gray-800 py-2 px-6 rounded-full hover:text-clifford;
-            }
-            a.active {
-                @apply bg-blue-500 text-white;
-            }
-            h3 {
-                @apply font-bold mb-3;
-              }
-
-        }
-    </style>
-
-</head>
-
-
-<body>
+  <body>
     <header class="">
-        <img src="logo.png" alt="Banco logo" width="200">
-        <h1 class="text-blue">Welcome to Banco de Occidente</h1>
+      <img src="logo.png" alt="Banco logo" width="200" />
+      <h1 class="text-blue">Welcome to Banco de Occidente</h1>
     </header>
 
-
-
-<section class="wrapper">
-    <nav class="flex menu justify-evenly">
+    <section class="wrapper">
+      <nav class="flex menu justify-evenly">
         <a href="#" class="">Vehicle</a>
         <a href="#" class="active">Aseguardo</a>
         <a href="#" class="">Cotizacion</a>
         <a href="#" class="">Confirmacion</a>
         <a href="#" class="">Inspecccion</a>
-    </nav>
-</section>
+      </nav>
+    </section>
 
-<form role="main" action="" class="mt-8">
-    <section id="'title" class="mx-auto">
+    <form role="main" action="" class="mt-8">
+
+      <section id="'title" class="flex justify-center prose max-w-none">
         <h1>Datos del asegurado</h1>
-    </section>
+      </section>
 
-    <section id="row1" class="row">
-        <label for="firstname" class="">First Name</label>
-        <input id="firstname" type="text" name="firstname" class="">
+      <section id="row1" class="row">
+        <label for="firstname" class="block">
+            <span class="text-gray-700">First name</span>
+            <input id="firstname" 
+                type="text" 
+                name="firstname" 
+                class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+                placeholder=""
+            />
+        </label>
 
-        <label for="lastname" class="">Last Name</label>
+        <label for="lastname" class="block">
+            <span class="text-gray-700">Last name</span>
+            <input
+                id="lastname"
+                type="text"
+                name="lastname"
+                class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+                placeholder="Type in your last name!"
+            />
+        </label>
+      </section>
 
-        <input id="lastname" type="text" name="lastname" class="mt-0
-        block
-        w-full
-        px-0.5
-        border-0 border-b-2 border-gray-200
-        focus:ring-0 focus:border-black">
+      <section id="row2" class="row">
+        <label for="make" class="block">
+            <span class="text-gray-700">Car Make</span>
+            <select id="makeCar" name="make" 
+                class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black">
+                    <option>Audi</option>
+                    <option>BMW</option>
+                    <option>Porsche</option>
+            </select>
+        </label>
 
-        <label class="block">
-            <span class="text-gray-700">Full name</span>
-            <input type="text" class="
-                mt-0
-                block
-                w-full
-                px-0.5
-                border-0 border-b-2 border-gray-200
-                focus:ring-0 focus:border-black
-              " placeholder="">
-          </label>
+        <label for="startDate" class="block">
+            <span class="text-gray-700">Policy Start Date</span>
+            <input id="startDate" type="date" name="startDate" 
+                class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"/>
+        </label>
+      </section>
+
+      <section id="row3" class="row">
+        <fieldset id="declarations" class="block">
+            <legend class="text-gray-700">Do you agree?</legend>
+
+            <div class="mt-2">
+                <div>
+                  <label class="inline-flex items-center">
+                    <input class="form-radio" type="radio" checked="" name="radio-declarations" value="Yes">
+                    <span class="ml-2">Yes</span>
+                  </label>
+                </div>
+                <div>
+                  <label class="inline-flex items-center">
+                    <input class="form-radio" type="radio" name="radio-declarations" value="No">
+                    <span class="ml-2">No</span>
+                  </label>
+                </div>
+              </div>
+        </fieldset>
+
+        <fieldset id="marketing" class="block">
+            <legend class="text-gray-700">How did you hear about us?</legend>
+
+            <div class="mt-2">
+                <div>
+                  <label class="inline-flex items-center">
+                    <input class="form-checkbox" type="checkbox" name="marketing" value="Facebook">
+                    <span class="ml-2">Google</span>
+                  </label>
+                </div>
+                <div>
+                  <label class="inline-flex items-center">
+                    <input class="form-checkbox" type="checkbox" name="marketing" value="Google">
+                    <span class="ml-2">Facebook</span>
+                  </label>
+                </div>
+              </div>
+        </fieldset>
+
+      </section>
 
 
-    </section>
-
-    <section id="row2" class="row">
-        <label for="make" class="">Car Make</label>
-        <select id="makeCar" name="make" class="">
-            <option>Audi</option>
-            <option>BMW</option>
-            <option>Porsche</option>
-        </select>                
-
-        <label for="startDate" class="">Policy Start Date</label>
-        <input id="startDate" type="date" name="startDate" class="">
-    </section>
-
-    <section id="declarations" class="row">
+      <section id="buttons" class="flex justify-center row">
         <form>
-            <label class="">Do you agree?</label>
-            <input id="confirmation_yes" type="radio" name="confirmation" value="Y" class="">
-            <label for="yes" class="">Yes</label>
-            <input id="confirmation_no" type="radio" name="confirmation" value="N" class="">
-            <label for="no" class="">No</label>
+          <button type="button" class="btn_secondary">Back</button>
+          <button type="button" class="btn_primary">Next</button>
         </form>
-    </section>
+      </section>
 
-    <section id="marketing" class="row">
-        <form>
-            <label class="">How did you hear about us?</label>
-            <input id="marketing1" type="checkbox" name="marketing1" value="1" class="">
-            <label for="marketing1" class="">Google</label>
-            <input id="marketing2" type="checkbox" name="marketing2" value="2" class="">
-            <label for="marketing2" class="">Facebook</label>
-        </form>
-    </section>
+    </form>
 
-    <section id="buttons" class="flex justify-center row">
-        <form>
-            <button type="button" class="px-4 py-2 font-light text-white bg-blue-500 rounded-xl hover:font-bold hover:bg-blue-700">Back</button>
-            <button type="button" class="">Next</button>       
-        </form>
-    </section>
-
-</form>
-
-<footer id="footer" class="mx-4 mt-8 prose-sm prose prose-slate prose-p:text-blue-600 hover:prose-p:text-blue-500 prose-code:text-red-500">
-    <p class="lead">Footer: Lorem ipsum is awesome</p>
-    <p class="">Here is some more lorem ipsum text</p>
-    <blockquote>
-        <p>Why is Tailwind removing the default styles on my <code>h1</code> elements? How do I disable this? What do you mean I lose all the other base styles too?</p>
+    <footer
+      id="footer"
+      class="mx-24 mt-8 prose-sm prose max-w-none prose-slate prose-p:text-blue-600 hover:prose-p:text-blue-500 prose-code:text-red-500"
+    >
+      <p class="lead">Footer: Lorem ipsum is awesome</p>
+      <p class="">Here is some more lorem ipsum text</p>
+      <blockquote>
+        <p>
+          Why is Tailwind removing the default styles on my
+          <code>h1</code> elements? How do I disable this? What do you mean I
+          lose all the other base styles too?
+        </p>
       </blockquote>
-  
-</footer>
+      <div class="quote">
+        <p>“You don't have to be great at something to start, but you have to start to be great at something.”</p>
+        <span>- Zig Ziglar</span>
+      </div>
+    </footer>
 
 
-</body>
+    </body>
 </html>
