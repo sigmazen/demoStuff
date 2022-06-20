@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tailwind example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: { sans: ["Noto Sans", "sans-serif"] },
+          extend: {
+            colors: {
+              clifford: "#00ff00",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+
+    <style type="text/tailwindcss">
+      @layer components {
+        .page_layout {
+          @apply grid grid-cols-3 gap-2 lg:grid-cols-1;
+        }
+        .navigation {
+          @apply flex flex-col col-span-1 text-xs lg:flex-row lg:w-full lg:text-base justify-evenly bg-blue-50 p-12;
+        }
+        .body_row {
+          @apply grid grid-cols-2 col-span-2 px-10 py-16 gap-16 bg-red-50 lg:bg-green-50;
+        }
+
+        a {
+          @apply py-2 my-0.5 px-8 flex justify-center rounded-full 
+            bg-blue-50 text-gray-800
+            hover:bg-blue-400 hover:text-white 
+            active:bg-blue-600 active:text-white
+            focus:outline-none focus:ring focus:ring-blue-400;
+        }
+        a.active {
+          @apply bg-blue-600  text-white 
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section class="page_layout">
+
+      <section class="">
+        <nav class="navigation">
+          <a tabindex="0" href="#" class="">Vehicle</a>
+          <a tabindex="0" href="#" class="active">Aseguardo</a>
+          <a tabindex="0" href="#" class="">Cotizacion</a>
+          <a tabindex="0" href="#" class="">Confirmacion</a>
+          <a tabindex="0" href="#" class="">Inspecccion</a>
+        </nav>
+      </section>
+
+      <section class="body_row">
+        <p class="grid place-content-center">Hello</p>
+        <p class="grid place-content-center">Goodbye</p>
+      </section>
+  
+    </section>
+
+
+
+    </body>
+</html>
